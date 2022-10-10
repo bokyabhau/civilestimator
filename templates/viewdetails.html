@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:title" content="Estimator" />
+  <meta property="og:description" content="Construction Cost Estimation in Few Clicks" />
+  <meta property="og:url" content="http://estimator.com" />
+  <meta name="description" content="Construction Cost Estimation in Few Clicks">
+  <meta name="keywords" content="Construction,Estimation, Home Loan, Building, House Cost, Estimate">
+  <meta name="author" content="Estimator">
+  <title>View Estimate Details</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
+    integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
+    integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc"
+    crossorigin="anonymous"></script>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+  <link rel="stylesheet" href="static/css/style.css">
+  <link rel="stylesheet" href="static/css/responsive.css">
+  <link rel="stylesheet" href="static/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="static/FontAwesome/css/all.min.css">
+  <link rel="shortcut icon" href="static/images/favicon.ico" />
+
+
+  <script src="static/js/jquery-3.3.1.min.js"></script>
+  <script src="static/js/sweetalert.min.js"></script>
+  <script src="static/js/sweetalert2.all.min.js"></script>
+  <script src="static/js/owl.carousel.min.js"></script>
+
+  <style>
+    .form-row {
+      margin-top: 50px;
+      margin-bottom: 15px;
+    }
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="{{url_for('static', filename='js/js.js')}}">
+
+
+  </script>
+
+  <title>View Estimate Details</title>
+</head>
+
+<body style="padding:20px;margin:auto auto;" class="bg-light">
+  <form
+    action="{{url_for('confirm',custname=custname,add=add,project=project,length=length,area=area,kitchen=kitchen,bath=bath,floors=floors,amt=amt,mailid=mailid,mobile=mobile,orderid=orderid)}}"
+    method="POST">
+
+    <div class="col-md-12 bg-light">
+      <div class="row justify-content-center">
+        <!-- Home Section Start -->
+        <section class="features " id="home" data-scroll-index="0">
+
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-md-12">
+                <div class="home-text">
+                  <div class="section-title">
+                    <h2>Estimate <span>Summary</span></h2>
+                  </div>
+                  <table class="table">
+
+
+                    <tr>
+                      <th>Client Name :</th>
+                      <th>{{custname}}</th>
+                    </tr>
+                    <tr>
+                      <th>Project Type :</th>
+                      <th>{{project}}</th>
+                    </tr>
+                    <tr>
+                      <th>Address :</th>
+                      <th name="fadd">{{add}}</th>
+                    </tr>
+                    <tr>
+                      <th>Quality of Construction :</th>
+                      <th>{{length}}</th>
+                    </tr>
+                    <tr>
+                      <th>Total Builtup Area (in SQ.FT.) :</th>
+                      <th>{{area}}</th>
+                    </tr>
+                    <tr>
+                      <th>No. of Floors :</th>
+                      <th>{{floors}}</th>
+                    </tr>
+                    <tr>
+                      <th>Total Estimate Amount :</th>
+                      <th>Rs. {{amt}} /-</th>
+                    </tr>
+                  </table>
+                  <div class="col-md-12 text-center">
+                    <button type="submit" id="pbtnprocess" class="btn btn-primary btn-lg font-weight-bold">Proceed</button>
+                    <button name="btnback" id="btnback" type="submit" value="btnback"
+                      class="btn btn-primary btn-lg font-weight-bold">Back</button>
+                    <button type="submit" name="btnprocess" id="hbtnprocess" value="btnprocess"
+                      class="btn btn-primary btn-lg font-weight-bold" style="display: none;">Success</button>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+        <!-- Home Section End -->
+
+
+
+
+
+
+
+
+
+
+        <input type="hidden" name="cwork" id="work" style="font-weight:bold; text-transform: uppercase"
+          class="form-control" value="{{custname}}">
+        <input type="hidden" name="cproject" id="cproject" style="font-weight:bold; text-transform: uppercase"
+          class="form-control" value="{{project}}">
+        <input type="hidden" name="cadd" id="cadd" style="font-weight:bold; text-transform: uppercase"
+          class="form-control" value="{{add}}">
+        <input type="hidden" name="clength" id="clength" style="font-weight:bold; text-transform: uppercase"
+          class="form-control" value="{{length}}">
+
+        <input type="hidden" name="carea" id="carea" style="font-weight:bold; text-transform: uppercase"
+          class="form-control" value="{{area}}">
+        <input type="hidden" name="cbath" id="cbath" style="font-weight:bold; text-transform: uppercase"
+          class="form-control" value="{{bath}}">
+        <input type="hidden" name="ckitchen" id="ckitchen" style="font-weight:bold; text-transform: uppercase"
+          class="form-control" value="{{kitchen}}">
+        <input type="hidden" name="cmailid" id="cmailid" style="font-weight:bold; text-transform: uppercase"
+          class="form-control" value="{{mailid}}">
+        <input type="hidden" name="cfloors" id="cmailid" style="font-weight:bold; text-transform: uppercase"
+          class="form-control" value="{{floors}}">
+        <input type="hidden" name="cmobile" id="cmobile" style="font-weight:bold; text-transform: uppercase"
+          class="form-control" value="{{mobile}}">
+
+
+        <input type="hidden" name="pid" id="pid" style="font-weight:bold; "
+          class="form-control" >
+        <input type="hidden" name="oid" id="oid" style="font-weight:bold; "
+          class="form-control" >
+        <input type="hidden" name="rs" id="rs" style="font-weight:bold; "
+          class="form-control" >
+
+
+
+
+
+
+      </div>
+    </div>
+
+    </div>
+    </div>
+  </form>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script>
+    var btnsuccess = document.getElementById("hbtnprocess");
+    var options = {
+      "key": "rzp_test_OzPBvsohQVxA7z", // Enter the Key ID generated from the Dashboard
+      "amount": "{{payment['amount']}}", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+      "currency": "INR",
+      "name": "VKon Consultants",
+      "description": "Payment for Estimate",
+      "image": "https://example.com/your_logo",
+      "order_id": "{{payment[order_id]}}", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+      "handler": function (response) {
+        btnsuccess.click();
+        document.getElementById("pid").value=response.razorpay_payment_id;
+        document.getElementById("oid").value=response.razorpay_order_id;
+        document.getElementById("rs").value=response.razorpay_signature;
+       /*  alert(response.razorpay_payment_id);
+        alert(response.razorpay_order_id);
+        alert(response.razorpay_signature) */
+      },
+      "prefill": {
+        "name": "{{custname}}",
+        "email": "{{mailid}}",
+        "contact": "{{mobile}}"
+      },
+      "notes": {
+        "address": "Razorpay Corporate Office"
+      },
+      "theme": {
+        "color": "#3399cc"
+      }
+    };
+    var rzp1 = new Razorpay(options);
+    rzp1.on('payment.failed', function (response) {
+      alert(response.error.code);
+      alert(response.error.description);
+      alert(response.error.source);
+      alert(response.error.step);
+      alert(response.error.reason);
+      alert(response.error.metadata.order_id);
+      alert(response.error.metadata.payment_id);
+    });
+    document.getElementById('pbtnprocess').onclick = function (e) {
+      rzp1.open();
+      /* window.location.href = "/results/"+resp["responseJSON"]["uuid"]; */
+      e.preventDefault();
+    }
+  </script>
+
+
+  <script src="static/js/js.js"></script>
+
+
+  <script src="static/js/custom.js"></script>
+
+
+
+
+</body>
+
+</html>

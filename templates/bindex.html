@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Estimator" />
+    <meta property="og:description" content="Construction Cost Estimation in Few Clicks" />
+    <meta property="og:url" content="http://estimator.com" />
+    
+
+    <meta name="description" content="Construction Cost Estimation in Few Clicks">
+    <meta name="keywords" content="Construction,Estimation, Home Loan, Building, House Cost, Estimate">
+    <meta name="author" content="Estimator">
+
+    <title>Estimator - Construction Cost Estimation</title>
+
+
+    
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+      .form-row {
+        margin-top:50px;
+        margin-bottom:15px;
+      }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script src="{{url_for('static', filename='js/js.js')}}">
+      
+  
+  </script>
+  </head>
+  <body>
+<div class="container">
+  <form action="/" method="POST">
+<div class="row">
+        <div class="input-field col s12">
+          <input placeholder="Client Name" name="work" id="work" style="text-transform: uppercase" type="text" class="validate" required>
+          <label for="work">Client Name</label>
+        </div>
+</div>
+
+<div class="row">
+        <div class="input-field col s12">
+          <textarea name="add" id="add" style="text-transform: uppercase" class="materialize-textarea" required></textarea>
+          <label for="add">Address</label>
+        </div>
+</div>
+
+<div class="row">
+<div class="input-field col s12">
+    <select name="project" id ="project" required>
+      <option value="" disabled selected>Choose your option</option>
+      <option value="RESIDENTIAL BUNGALOW">RESIDENTIAL BUNGALOW</option>
+      <option value="COMMERCIAL PROJECT">COMMERCIAL PROJECT</option>
+      <option value="RESIDENTIAL PROJECT">RESIDENTIAL PROJECT</option>
+    </select>
+    <label>Select Project Type</label>
+</div>
+</div>
+
+<div class="row">
+        <div class="input-field col s12">
+          <input placeholder="Length of Plinth (in ft.)" name="length" id="length" type="text" class="validate" required>
+          <label for="length">Length of Plinth (in ft.)</label>
+        </div>
+</div>
+
+<div class="row">
+        <div class="input-field col s12">
+          <input placeholder="Width of Plinth (in ft.)" name="width" id="width" type="text" class="validate" required>
+          <label for="width">Width of Plinth (in ft.)</label>
+        </div>
+</div>
+    
+<div class="row">
+        <div class="input-field col s12">
+          <input placeholder="Total Builtup Area (in sq.ft.)" name="barea" id="barea" type="text" class="validate" required>
+          <label for="barea">Total Builtup Area (in sq.ft.)</label>
+        </div>
+</div>
+
+<div class="row">
+        <div class="input-field col s12">
+          <input placeholder="No. of Kitchens" name="kitchen" id="kitchen" type="text" class="validate"required>
+          <label for="kitchen">No. of Kitchens</label>
+        </div>
+</div>   
+
+<div class="row">
+        <div class="input-field col s12">
+          <input placeholder="No. of Bathrooms" name="bath" id="bath" type="text" class="validate" required>
+          <label for="bath">No. of Bathrooms</label>
+        </div>
+</div>
+
+<div class="row">
+<div class="input-field col s12">
+    <select name="floors" id ="floors" required>
+      <option value="" disabled selected>Choose your option</option>
+      <option value="GF">GF</option>
+      <option value="GF + 1">GF + 1</option>
+      <option value="GF + 2">GF + 2</option>
+      <option value="GF + 3">GF + 3</option>
+      <option value="GF + 4">GF + 4</option>
+      <option value="GF + 5">GF + 5</option>
+    </select>
+    <label>Select No. of Floors</label>
+</div>
+</div> 
+<div class="row">
+        <div class="input-field col s12">
+          <input placeholder="Email Id" name="mailid" id="mailid" style="text-transform: uppercase" type="email" class="validate" required>
+          <label for="mailid">Email Id</label>
+        </div>
+</div>
+
+<div class="row">
+<button id="btngen" class="waves-effect waves-light btn purple darken-1"><i class="material-icons left">input</i>Generate Estimate</button>
+</div>
+
+   
+    </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  
+  <?!= include("page-js"); ?>
+
+  
+  </body>
+</html>
